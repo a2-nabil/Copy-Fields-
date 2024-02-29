@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>copy field</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+      }
+      body {
+        padding: 20px 10px;
+        max-width: 1170px;
+        margin: 0 auto;
+      }
+      .a2n_copy-field_container {
+        background: #ffffff;
+        border: 1.5px solid rgba(73, 62, 62, 0.4);
+        border-radius: 41px;
+        max-width: 398px;
+        width: 100%;
+        height: 59px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .a2n_copy-field_container .a2n_coupon-icon {
+        width: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        border-right: 1px solid rgba(73, 62, 62, 0.4);
+      }
+
+      input#a2n_cp-field {
+        border: 0;
+        height: 100%;
+        text-align: center;
+        padding: 5px;
+        width: calc(100% - 135px);
+        font-family: "Poppins";
+        color: #4e3727;
+        font-weight: 600;
+        font-size: 21px;
+      }
+
+      button#a2n_copy-btn {
+        display: flex;
+        width: 137px;
+        border: none;
+        border-radius: 0px 10px 10px 0px;
+        background: #e90d0d;
+        border-radius: 41px;
+        height: 46px;
+        margin: 6px 6px 6px;
+        color: #fff;
+        font-family: "outfit", Sans-Serif;
+        font-size: 19px;
+        font-weight: 500;
+        justify-content: center;
+        align-items: center;
+      }
+
+      p#a2n_cp-text {
+        color: #4c575f !important;
+        margin-top: 7px;
+      }
+
+      @media (max-width: 767px) {
+        .a2n_copy-field_container {
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a2n_copy-field_container">
+      <div class="a2n_coupon-icon">
+        <img
+          src="https://cambridgeopenacademy.com/wp-content/uploads/2023/12/Promo-Code.svg"
+        />
+      </div>
+      <input id="a2n_cp-field" type="text" value="A2N" readonly/>
+
+      <button onclick="myFunction()" id="a2n_copy-btn">
+        <img
+          src="http://theanimalcare.org/wp-content/uploads/2023/12/clipboard-outline-1.png"
+        />
+        Copy
+      </button>
+    </div>
+    <p id="a2n_cp-text"></p>
+
+    <script type="text/javascript">
+      const cpField = document.getElementById("a2n_cp-field");
+      const cpBtn = document.getElementById("a2n_copy-btn");
+
+      cpBtn.onclick = function () {
+        cpField.select();
+        document.execCommand("Copy");
+        document.getElementById("a2n_cp-text").innerHTML =
+          "Congratulation You Have Copied This Coupon..! ";
+      };
+    </script>
+  </body>
+</html>

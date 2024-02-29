@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>copy field</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+      }
+      body {
+        padding: 20px 10px;
+        max-width: 1170px;
+        margin: 0 auto;
+      }
+      .a2n_copy-field_container {
+        width: 100%;
+        max-width: 376.26px;
+        height: 54.57px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-radius: 47.87px;
+        border-left: 4.759px solid #25a46f;
+        background: #fff;
+        box-shadow: 0px 19.035px 38.069px 0px rgba(0, 0, 0, 0.1);
+      }
+
+      .a2n_copy-field_container .a2n_coupon-icon {
+        width: 47.87px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
+      input#a2n_cp-field {
+        border: 0;
+        height: 100%;
+        text-align: center;
+        padding: 5px;
+        width: calc(100% - 135px);
+        color: #4e5374;
+        font-family: "Inter", sans-serif;
+        font-size: 22.959px;
+        font-weight: 700;
+        line-height: 32.143px;
+        text-align: left;
+      }
+
+      button#a2n_copy-btn {
+        width: 118.86px;
+        border: none;
+        border-radius: 32.293px;
+        background: #25a46f;
+        margin: 6px 6px 6px;
+        color: #fff;
+        text-align: center;
+        font-family: "Inter", sans-serif;
+        font-size: 22.041px;
+        font-weight: 700;
+        line-height: 26.449px;
+        cursor: pointer;
+        display: flex;
+        height: 45.955px;
+        padding: 11.897px 30.931px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      p#a2n_cp-text {
+        font-family: "Inter", sans-serif;
+        color: #4e5374 !important;
+        margin-top: 7px;
+      }
+
+      @media (max-width: 767px) {
+        .a2n_copy-field_container {
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a2n_copy-field_container">
+      <div class="a2n_coupon-icon"></div>
+      <input id="a2n_cp-field" type="text" value="SP317" readonly />
+
+      <button onclick="myFunction()" id="a2n_copy-btn">Copy</button>
+    </div>
+    <p id="a2n_cp-text"></p>
+
+    <script type="text/javascript">
+      const cpField = document.getElementById("a2n_cp-field");
+      const cpBtn = document.getElementById("a2n_copy-btn");
+
+      cpBtn.onclick = function () {
+        cpField.select();
+        document.execCommand("Copy");
+        document.getElementById("a2n_cp-text").innerHTML =
+          "Congratulation You Have Copied This Coupon..! ";
+      };
+    </script>
+  </body>
+</html>
